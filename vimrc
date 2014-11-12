@@ -74,10 +74,10 @@ function! ToggleComment()
 		let comment_leader = s:comment_map[&filetype]
 		if getline('.') =~ "^" . comment_leader
 		" Uncomment the line
-			execute "silent s/^" . comment_leader . "//"
+			execute "s#^" . comment_leader . "#"
 		else
 		" Comment the line
-			execute "silent s/^/" . comment_leader . "/"
+			execute "s#^#" . comment_leader . "#"
 		endif
 		else
 			echo "No comment leader found for filetype"
@@ -85,4 +85,4 @@ function! ToggleComment()
 endfunction
 
 nnoremap cl :call ToggleComment()<cr>
-
+vnoremap cl :call ToggleComment()<cr>
