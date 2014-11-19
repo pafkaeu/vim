@@ -19,15 +19,14 @@ set undofile
 
 syntax on
 
-colorscheme gotham256
+colorscheme pafka
 
 set list
-set listchars=eol:¬,tab:→→,extends:>,precedes:.
-
+set listchars=tab:▸\ ,eol:¬,nbsp:␣,trail:·
 
 highlight CursorLineNr cterm=none ctermfg=0 guifg=#073642
-highlight NonText cterm=none ctermfg=0 guifg=#073642
-highlight SpecialKey cterm=none ctermfg=0 guifg=#073642 ctermbg=8 guibg=#002b36
+" highlight NonText cterm=none ctermfg=0 guifg=#073642
+" highlight SpecialKey cterm=none ctermfg=0 guifg=#073642 ctermbg=8 guibg=#002b36
 
 set statusline=%F%m%r%h%w\ (%{&ff}){%Y}[%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 
