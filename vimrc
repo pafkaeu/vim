@@ -1,5 +1,5 @@
 set t_Co=256
-set tabstop=4
+" set tabstop=4
 set encoding=utf-8
 set scrolloff=3
 set autoindent
@@ -16,10 +16,22 @@ set laststatus=2
 " set relativenumber
 set nu
 set undofile
+set pastetoggle=<F2>
+set smarttab
+set smartcase
+
+
+" For ftp editing
+set noswapfile
+set autoread
+
+" CtrlP plugin:
+nmap <F4> :NERDTreeToggle<CR>
+map <silent> <F3> :call BufferList()<CR>
 
 syntax on
 
-colorscheme pafka
+colorscheme gentooish
 
 set list
 set listchars=tab:▸\ ,eol:¬,nbsp:␣,trail:·
@@ -85,3 +97,13 @@ endfunction
 
 nnoremap cl :call ToggleComment()<cr>
 vnoremap cl :call ToggleComment()<cr>
+
+
+" Auto closing tags
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
